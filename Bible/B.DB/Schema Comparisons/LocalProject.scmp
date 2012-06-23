@@ -3,10 +3,10 @@
   <Version>1</Version>
   <SourceModelProvider>
     <ConnectionBasedModelProvider>
-      <ConnectionString>Data Source=5.89.208.250;Initial Catalog=Bible;Persist Security Info=True;User ID=sa;Pooling=False</ConnectionString>
+      <ConnectionString>Data Source=localhost;Initial Catalog=Bible;Integrated Security=True;Pooling=False</ConnectionString>
       <DatabaseName>Bible</DatabaseName>
       <DspFamilyName>sql</DspFamilyName>
-      <Name>[5.89.208.250.Bible.sa]</Name>
+      <Name>[W-DEV2.Bible]</Name>
     </ConnectionBasedModelProvider>
   </SourceModelProvider>
   <TargetModelProvider>
@@ -286,6 +286,14 @@
       <PropertyElementName>
         <Name>GenerateDropsIfNotInProject</Name>
         <Value>True</Value>
+      </PropertyElementName>
+      <PropertyElementName>
+        <Name>TargetDatabaseName</Name>
+        <Value>Bible</Value>
+      </PropertyElementName>
+      <PropertyElementName>
+        <Name>TargetConnectionString</Name>
+        <Value>Data Source=localhost;Initial Catalog=Bible;Integrated Security=True;Pooling=False</Value>
       </PropertyElementName>
       <PropertyElementName>
         <Name>VerifyDeployment</Name>
