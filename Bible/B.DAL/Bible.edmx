@@ -1,0 +1,522 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BibleModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="BibleModelStoreContainer">
+          <EntitySet Name="BibleType" EntityType="BibleModel.Store.BibleType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Books" EntityType="BibleModel.Store.Books" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VersesASV" EntityType="BibleModel.Store.VersesASV" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VersesBasicEnglish" EntityType="BibleModel.Store.VersesBasicEnglish" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VersesDarby" EntityType="BibleModel.Store.VersesDarby" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VersesKJV" EntityType="BibleModel.Store.VersesKJV" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VersesWEB" EntityType="BibleModel.Store.VersesWEB" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VersesWebster" EntityType="BibleModel.Store.VersesWebster" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VersesYLT" EntityType="BibleModel.Store.VersesYLT" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="BibleType">
+          <Key>
+            <PropertyRef Name="RecID" />
+          </Key>
+          <Property Name="RecID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BibleName" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Books">
+          <Key>
+            <PropertyRef Name="BookID" />
+          </Key>
+          <Property Name="BookID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Book" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="FriendlyBookURL" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="VersesASV">
+          <Key>
+            <PropertyRef Name="RecID" />
+          </Key>
+          <Property Name="RecID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BookID" Type="int" Nullable="false" />
+          <Property Name="Book" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Chapter" Type="int" Nullable="false" />
+          <Property Name="Verse" Type="int" Nullable="false" />
+          <Property Name="VerseText" Type="text" Nullable="false" />
+          <Property Name="FriendlyChapterURL" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="FriendlyVerseURL" Type="varchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="VersesBasicEnglish">
+          <Key>
+            <PropertyRef Name="RecID" />
+          </Key>
+          <Property Name="RecID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BookID" Type="int" />
+          <Property Name="Book" Type="varchar" MaxLength="100" />
+          <Property Name="Chapter" Type="int" />
+          <Property Name="Verse" Type="int" />
+          <Property Name="VerseText" Type="text" />
+          <Property Name="FriendlyChapterURL" Type="varchar" MaxLength="500" />
+          <Property Name="FriendlyVerseURL" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="VersesDarby">
+          <Key>
+            <PropertyRef Name="RecID" />
+          </Key>
+          <Property Name="RecID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BookID" Type="int" />
+          <Property Name="Book" Type="varchar" MaxLength="100" />
+          <Property Name="Chapter" Type="int" />
+          <Property Name="Verse" Type="int" />
+          <Property Name="VerseText" Type="text" />
+          <Property Name="FriendlyChapterURL" Type="varchar" MaxLength="500" />
+          <Property Name="FriendlyVerseURL" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="VersesKJV">
+          <Key>
+            <PropertyRef Name="RecID" />
+          </Key>
+          <Property Name="RecID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BookID" Type="int" />
+          <Property Name="Book" Type="varchar" MaxLength="100" />
+          <Property Name="Chapter" Type="int" />
+          <Property Name="Verse" Type="int" />
+          <Property Name="VerseText" Type="text" />
+          <Property Name="FriendlyChapterURL" Type="varchar" MaxLength="500" />
+          <Property Name="FriendlyVerseURL" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="VersesWEB">
+          <Key>
+            <PropertyRef Name="RecID" />
+          </Key>
+          <Property Name="RecID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BookID" Type="int" />
+          <Property Name="Book" Type="varchar" MaxLength="100" />
+          <Property Name="Chapter" Type="int" />
+          <Property Name="Verse" Type="int" />
+          <Property Name="VerseText" Type="text" />
+          <Property Name="FriendlyChapterURL" Type="varchar" MaxLength="500" />
+          <Property Name="FriendlyVerseURL" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="VersesWebster">
+          <Key>
+            <PropertyRef Name="RecID" />
+          </Key>
+          <Property Name="RecID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BookID" Type="int" />
+          <Property Name="Book" Type="varchar" MaxLength="100" />
+          <Property Name="Chapter" Type="int" />
+          <Property Name="Verse" Type="int" />
+          <Property Name="VerseText" Type="text" />
+          <Property Name="FriendlyChapterURL" Type="varchar" MaxLength="500" />
+          <Property Name="FriendlyVerseURL" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="VersesYLT">
+          <Key>
+            <PropertyRef Name="RecID" />
+          </Key>
+          <Property Name="RecID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BookID" Type="int" />
+          <Property Name="Book" Type="varchar" MaxLength="100" />
+          <Property Name="Chapter" Type="int" />
+          <Property Name="Verse" Type="int" />
+          <Property Name="VerseText" Type="text" />
+          <Property Name="FriendlyChapterURL" Type="varchar" MaxLength="500" />
+          <Property Name="FriendlyVerseURL" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <Function Name="usp_Create_FriendlyURLs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_GetBibleName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BibleTypeID" Type="int" Mode="In" />
+          <Parameter Name="BibleName" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="usp_GetBooks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_GetChapter" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FriendlyChapterURL" Type="nvarchar" Mode="In" />
+          <Parameter Name="BibleTypeID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_GetChapters" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FriendlyBookURL" Type="nvarchar" Mode="In" />
+          <Parameter Name="BibleTypeID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_GetSiteMap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SiteURL" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_GetVerse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FriendlyVerseURL" Type="nvarchar" Mode="In" />
+          <Parameter Name="BibleTypeID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_SearchVerses" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SearchText" Type="nvarchar" Mode="In" />
+          <Parameter Name="BibleTypeID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_UpdateBookID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_UpdateBooks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BibleModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="BibleEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BibleTypes" EntityType="BibleModel.BibleType" />
+          <EntitySet Name="Books" EntityType="BibleModel.Book" />
+          <EntitySet Name="VersesASVs" EntityType="BibleModel.VersesASV" />
+          <EntitySet Name="VersesBasicEnglishes" EntityType="BibleModel.VersesBasicEnglish" />
+          <EntitySet Name="VersesDarbies" EntityType="BibleModel.VersesDarby" />
+          <EntitySet Name="VersesKJVs" EntityType="BibleModel.VersesKJV" />
+          <EntitySet Name="VersesWEBs" EntityType="BibleModel.VersesWEB" />
+          <EntitySet Name="VersesWebsters" EntityType="BibleModel.VersesWebster" />
+          <EntitySet Name="VersesYLTs" EntityType="BibleModel.VersesYLT" />
+          <FunctionImport Name="usp_GetBooks" ReturnType="Collection(BibleModel.usp_GetBooks_Result)" />
+          <FunctionImport Name="usp_GetChapters" ReturnType="Collection(BibleModel.usp_GetChapters_Result)">
+            <Parameter Name="FriendlyBookURL" Mode="In" Type="String" />
+            <Parameter Name="BibleTypeID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_GetChapter" ReturnType="Collection(BibleModel.usp_GetChapter_Result)">
+            <Parameter Name="FriendlyChapterURL" Mode="In" Type="String" />
+            <Parameter Name="BibleTypeID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_SearchVerses" ReturnType="Collection(BibleModel.usp_SearchVerses_Result)">
+            <Parameter Name="SearchText" Mode="In" Type="String" />
+            <Parameter Name="BibleTypeID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_GetVerse" ReturnType="Collection(BibleModel.usp_GetVerse_Result)">
+            <Parameter Name="FriendlyVerseURL" Mode="In" Type="String" />
+            <Parameter Name="BibleTypeID" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="BibleType">
+          <Key>
+            <PropertyRef Name="RecID" />
+          </Key>
+          <Property Name="RecID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BibleName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Book">
+          <Key>
+            <PropertyRef Name="BookID" />
+          </Key>
+          <Property Name="BookID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Book1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="FriendlyBookURL" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="VersesASV">
+          <Key>
+            <PropertyRef Name="RecID" />
+          </Key>
+          <Property Name="RecID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BookID" Type="Int32" Nullable="false" />
+          <Property Name="Book" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Chapter" Type="Int32" Nullable="false" />
+          <Property Name="Verse" Type="Int32" Nullable="false" />
+          <Property Name="VerseText" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="FriendlyChapterURL" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="FriendlyVerseURL" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="VersesBasicEnglish">
+          <Key>
+            <PropertyRef Name="RecID" />
+          </Key>
+          <Property Name="RecID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BookID" Type="Int32" />
+          <Property Name="Book" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Chapter" Type="Int32" />
+          <Property Name="Verse" Type="Int32" />
+          <Property Name="VerseText" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="FriendlyChapterURL" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="FriendlyVerseURL" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="VersesDarby">
+          <Key>
+            <PropertyRef Name="RecID" />
+          </Key>
+          <Property Name="RecID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BookID" Type="Int32" />
+          <Property Name="Book" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Chapter" Type="Int32" />
+          <Property Name="Verse" Type="Int32" />
+          <Property Name="VerseText" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="FriendlyChapterURL" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="FriendlyVerseURL" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="VersesKJV">
+          <Key>
+            <PropertyRef Name="RecID" />
+          </Key>
+          <Property Name="RecID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BookID" Type="Int32" />
+          <Property Name="Book" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Chapter" Type="Int32" />
+          <Property Name="Verse" Type="Int32" />
+          <Property Name="VerseText" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="FriendlyChapterURL" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="FriendlyVerseURL" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="VersesWEB">
+          <Key>
+            <PropertyRef Name="RecID" />
+          </Key>
+          <Property Name="RecID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BookID" Type="Int32" />
+          <Property Name="Book" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Chapter" Type="Int32" />
+          <Property Name="Verse" Type="Int32" />
+          <Property Name="VerseText" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="FriendlyChapterURL" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="FriendlyVerseURL" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="VersesWebster">
+          <Key>
+            <PropertyRef Name="RecID" />
+          </Key>
+          <Property Name="RecID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BookID" Type="Int32" />
+          <Property Name="Book" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Chapter" Type="Int32" />
+          <Property Name="Verse" Type="Int32" />
+          <Property Name="VerseText" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="FriendlyChapterURL" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="FriendlyVerseURL" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="VersesYLT">
+          <Key>
+            <PropertyRef Name="RecID" />
+          </Key>
+          <Property Name="RecID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BookID" Type="Int32" />
+          <Property Name="Book" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Chapter" Type="Int32" />
+          <Property Name="Verse" Type="Int32" />
+          <Property Name="VerseText" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="FriendlyChapterURL" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="FriendlyVerseURL" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <ComplexType Name="usp_GetBooks_Result">
+          <Property Type="Int32" Name="BookID" Nullable="false" />
+          <Property Type="String" Name="Book" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="DisplayName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="FriendlyBookURL" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="usp_GetChapters_Result">
+          <Property Type="String" Name="Book" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Chapter" Nullable="false" />
+          <Property Type="String" Name="DisplayName" Nullable="true" MaxLength="114" />
+          <Property Type="String" Name="FriendlyChapterURL" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="FriendlyBookURL" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="BibleName" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="usp_GetChapter_Result">
+          <Property Type="Int32" Name="RecID" Nullable="false" />
+          <Property Type="Int32" Name="BookID" Nullable="false" />
+          <Property Type="String" Name="Book" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Chapter" Nullable="false" />
+          <Property Type="Int32" Name="Verse" Nullable="false" />
+          <Property Type="String" Name="VerseText" Nullable="false" MaxLength="Max" />
+          <Property Type="String" Name="FriendlyChapterURL" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="FriendlyVerseURL" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="BibleName" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="usp_SearchVerses_Result">
+          <Property Type="Int32" Name="RecID" Nullable="false" />
+          <Property Type="Int32" Name="BookID" Nullable="false" />
+          <Property Type="String" Name="Book" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Chapter" Nullable="false" />
+          <Property Type="Int32" Name="Verse" Nullable="false" />
+          <Property Type="String" Name="VerseText" Nullable="false" MaxLength="Max" />
+          <Property Type="String" Name="FriendlyChapterURL" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="FriendlyVerseURL" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="BibleName" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="usp_GetVerse_Result">
+          <Property Type="Int32" Name="RecID" Nullable="false" />
+          <Property Type="Int32" Name="BookID" Nullable="false" />
+          <Property Type="String" Name="Book" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Chapter" Nullable="false" />
+          <Property Type="Int32" Name="Verse" Nullable="false" />
+          <Property Type="String" Name="VerseText" Nullable="false" MaxLength="Max" />
+          <Property Type="String" Name="FriendlyChapterURL" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="FriendlyVerseURL" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="BibleName" Nullable="true" MaxLength="100" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BibleModelStoreContainer" CdmEntityContainer="BibleEntities">
+          <EntitySetMapping Name="BibleTypes"><EntityTypeMapping TypeName="BibleModel.BibleType"><MappingFragment StoreEntitySet="BibleType">
+            <ScalarProperty Name="RecID" ColumnName="RecID" />
+            <ScalarProperty Name="BibleName" ColumnName="BibleName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Books"><EntityTypeMapping TypeName="BibleModel.Book"><MappingFragment StoreEntitySet="Books">
+            <ScalarProperty Name="BookID" ColumnName="BookID" />
+            <ScalarProperty Name="Book1" ColumnName="Book" />
+            <ScalarProperty Name="FriendlyBookURL" ColumnName="FriendlyBookURL" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="VersesASVs"><EntityTypeMapping TypeName="BibleModel.VersesASV"><MappingFragment StoreEntitySet="VersesASV">
+            <ScalarProperty Name="RecID" ColumnName="RecID" />
+            <ScalarProperty Name="BookID" ColumnName="BookID" />
+            <ScalarProperty Name="Book" ColumnName="Book" />
+            <ScalarProperty Name="Chapter" ColumnName="Chapter" />
+            <ScalarProperty Name="Verse" ColumnName="Verse" />
+            <ScalarProperty Name="VerseText" ColumnName="VerseText" />
+            <ScalarProperty Name="FriendlyChapterURL" ColumnName="FriendlyChapterURL" />
+            <ScalarProperty Name="FriendlyVerseURL" ColumnName="FriendlyVerseURL" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="VersesBasicEnglishes"><EntityTypeMapping TypeName="BibleModel.VersesBasicEnglish"><MappingFragment StoreEntitySet="VersesBasicEnglish">
+            <ScalarProperty Name="RecID" ColumnName="RecID" />
+            <ScalarProperty Name="BookID" ColumnName="BookID" />
+            <ScalarProperty Name="Book" ColumnName="Book" />
+            <ScalarProperty Name="Chapter" ColumnName="Chapter" />
+            <ScalarProperty Name="Verse" ColumnName="Verse" />
+            <ScalarProperty Name="VerseText" ColumnName="VerseText" />
+            <ScalarProperty Name="FriendlyChapterURL" ColumnName="FriendlyChapterURL" />
+            <ScalarProperty Name="FriendlyVerseURL" ColumnName="FriendlyVerseURL" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="VersesDarbies"><EntityTypeMapping TypeName="BibleModel.VersesDarby"><MappingFragment StoreEntitySet="VersesDarby">
+            <ScalarProperty Name="RecID" ColumnName="RecID" />
+            <ScalarProperty Name="BookID" ColumnName="BookID" />
+            <ScalarProperty Name="Book" ColumnName="Book" />
+            <ScalarProperty Name="Chapter" ColumnName="Chapter" />
+            <ScalarProperty Name="Verse" ColumnName="Verse" />
+            <ScalarProperty Name="VerseText" ColumnName="VerseText" />
+            <ScalarProperty Name="FriendlyChapterURL" ColumnName="FriendlyChapterURL" />
+            <ScalarProperty Name="FriendlyVerseURL" ColumnName="FriendlyVerseURL" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="VersesKJVs"><EntityTypeMapping TypeName="BibleModel.VersesKJV"><MappingFragment StoreEntitySet="VersesKJV">
+            <ScalarProperty Name="RecID" ColumnName="RecID" />
+            <ScalarProperty Name="BookID" ColumnName="BookID" />
+            <ScalarProperty Name="Book" ColumnName="Book" />
+            <ScalarProperty Name="Chapter" ColumnName="Chapter" />
+            <ScalarProperty Name="Verse" ColumnName="Verse" />
+            <ScalarProperty Name="VerseText" ColumnName="VerseText" />
+            <ScalarProperty Name="FriendlyChapterURL" ColumnName="FriendlyChapterURL" />
+            <ScalarProperty Name="FriendlyVerseURL" ColumnName="FriendlyVerseURL" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="VersesWEBs"><EntityTypeMapping TypeName="BibleModel.VersesWEB"><MappingFragment StoreEntitySet="VersesWEB">
+            <ScalarProperty Name="RecID" ColumnName="RecID" />
+            <ScalarProperty Name="BookID" ColumnName="BookID" />
+            <ScalarProperty Name="Book" ColumnName="Book" />
+            <ScalarProperty Name="Chapter" ColumnName="Chapter" />
+            <ScalarProperty Name="Verse" ColumnName="Verse" />
+            <ScalarProperty Name="VerseText" ColumnName="VerseText" />
+            <ScalarProperty Name="FriendlyChapterURL" ColumnName="FriendlyChapterURL" />
+            <ScalarProperty Name="FriendlyVerseURL" ColumnName="FriendlyVerseURL" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="VersesWebsters"><EntityTypeMapping TypeName="BibleModel.VersesWebster"><MappingFragment StoreEntitySet="VersesWebster">
+            <ScalarProperty Name="RecID" ColumnName="RecID" />
+            <ScalarProperty Name="BookID" ColumnName="BookID" />
+            <ScalarProperty Name="Book" ColumnName="Book" />
+            <ScalarProperty Name="Chapter" ColumnName="Chapter" />
+            <ScalarProperty Name="Verse" ColumnName="Verse" />
+            <ScalarProperty Name="VerseText" ColumnName="VerseText" />
+            <ScalarProperty Name="FriendlyChapterURL" ColumnName="FriendlyChapterURL" />
+            <ScalarProperty Name="FriendlyVerseURL" ColumnName="FriendlyVerseURL" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="VersesYLTs"><EntityTypeMapping TypeName="BibleModel.VersesYLT"><MappingFragment StoreEntitySet="VersesYLT">
+            <ScalarProperty Name="RecID" ColumnName="RecID" />
+            <ScalarProperty Name="BookID" ColumnName="BookID" />
+            <ScalarProperty Name="Book" ColumnName="Book" />
+            <ScalarProperty Name="Chapter" ColumnName="Chapter" />
+            <ScalarProperty Name="Verse" ColumnName="Verse" />
+            <ScalarProperty Name="VerseText" ColumnName="VerseText" />
+            <ScalarProperty Name="FriendlyChapterURL" ColumnName="FriendlyChapterURL" />
+            <ScalarProperty Name="FriendlyVerseURL" ColumnName="FriendlyVerseURL" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="usp_GetBooks" FunctionName="BibleModel.Store.usp_GetBooks">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BibleModel.usp_GetBooks_Result">
+                <ScalarProperty Name="BookID" ColumnName="BookID" />
+                <ScalarProperty Name="Book" ColumnName="Book" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="FriendlyBookURL" ColumnName="FriendlyBookURL" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_GetChapters" FunctionName="BibleModel.Store.usp_GetChapters">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BibleModel.usp_GetChapters_Result">
+                <ScalarProperty Name="Book" ColumnName="Book" />
+                <ScalarProperty Name="Chapter" ColumnName="Chapter" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="FriendlyChapterURL" ColumnName="FriendlyChapterURL" />
+                <ScalarProperty Name="FriendlyBookURL" ColumnName="FriendlyBookURL" />
+                <ScalarProperty Name="BibleName" ColumnName="BibleName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_GetChapter" FunctionName="BibleModel.Store.usp_GetChapter">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BibleModel.usp_GetChapter_Result">
+                <ScalarProperty Name="RecID" ColumnName="RecID" />
+                <ScalarProperty Name="BookID" ColumnName="BookID" />
+                <ScalarProperty Name="Book" ColumnName="Book" />
+                <ScalarProperty Name="Chapter" ColumnName="Chapter" />
+                <ScalarProperty Name="Verse" ColumnName="Verse" />
+                <ScalarProperty Name="VerseText" ColumnName="VerseText" />
+                <ScalarProperty Name="FriendlyChapterURL" ColumnName="FriendlyChapterURL" />
+                <ScalarProperty Name="FriendlyVerseURL" ColumnName="FriendlyVerseURL" />
+                <ScalarProperty Name="BibleName" ColumnName="BibleName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_SearchVerses" FunctionName="BibleModel.Store.usp_SearchVerses">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BibleModel.usp_SearchVerses_Result">
+                <ScalarProperty Name="RecID" ColumnName="RecID" />
+                <ScalarProperty Name="BookID" ColumnName="BookID" />
+                <ScalarProperty Name="Book" ColumnName="Book" />
+                <ScalarProperty Name="Chapter" ColumnName="Chapter" />
+                <ScalarProperty Name="Verse" ColumnName="Verse" />
+                <ScalarProperty Name="VerseText" ColumnName="VerseText" />
+                <ScalarProperty Name="FriendlyChapterURL" ColumnName="FriendlyChapterURL" />
+                <ScalarProperty Name="FriendlyVerseURL" ColumnName="FriendlyVerseURL" />
+                <ScalarProperty Name="BibleName" ColumnName="BibleName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_GetVerse" FunctionName="BibleModel.Store.usp_GetVerse">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BibleModel.usp_GetVerse_Result">
+                <ScalarProperty Name="RecID" ColumnName="RecID" />
+                <ScalarProperty Name="BookID" ColumnName="BookID" />
+                <ScalarProperty Name="Book" ColumnName="Book" />
+                <ScalarProperty Name="Chapter" ColumnName="Chapter" />
+                <ScalarProperty Name="Verse" ColumnName="Verse" />
+                <ScalarProperty Name="VerseText" ColumnName="VerseText" />
+                <ScalarProperty Name="FriendlyChapterURL" ColumnName="FriendlyChapterURL" />
+                <ScalarProperty Name="FriendlyVerseURL" ColumnName="FriendlyVerseURL" />
+                <ScalarProperty Name="BibleName" ColumnName="BibleName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Bible">
+        <EntityTypeShape EntityType="BibleModel.BibleType" Width="1.5" PointX="0.75" PointY="0.75" Height="1.4033821614583331" IsExpanded="true" />
+        <EntityTypeShape EntityType="BibleModel.Book" Width="1.5" PointX="2.75" PointY="0.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="BibleModel.VersesASV" Width="1.5" PointX="0.75" PointY="3.75" Height="2.5571907552083335" IsExpanded="true" />
+        <EntityTypeShape EntityType="BibleModel.VersesBasicEnglish" Width="1.5" PointX="2.75" PointY="3.75" Height="2.5571907552083335" IsExpanded="true" />
+        <EntityTypeShape EntityType="BibleModel.VersesDarby" Width="1.5" PointX="4.75" PointY="0.75" Height="2.5571907552083335" IsExpanded="true" />
+        <EntityTypeShape EntityType="BibleModel.VersesKJV" Width="1.5" PointX="4.75" PointY="4.75" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="BibleModel.VersesWEB" Width="1.5" PointX="6.75" PointY="0.75" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="BibleModel.VersesWebster" Width="1.5" PointX="6.75" PointY="4.75" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="BibleModel.VersesYLT" Width="1.5" PointX="0.75" PointY="7.75" Height="2.5571907552083317" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

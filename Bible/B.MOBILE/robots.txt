@@ -1,0 +1,11 @@
+﻿#|--------------------------------------------------------|
+#| File: Robots.txt                             	      |
+#| Webmaster: Matthew David Elgert                        |
+#| E-Mail: info@sendbible.com                             |
+#| Last Updated: 11/26/2011                               |
+#|--------------------------------------------------------|
+
+User-agent: *
+Allow: /
+
+Sitemap:http://www.sendbible.com/sitemap.xml

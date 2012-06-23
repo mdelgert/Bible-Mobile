@@ -1,0 +1,20 @@
+SQL re-sync users
+http://www.sqlteam.com/forums/topic.asp?TOPIC_ID=128023
+http://codesnippets.joyent.com/posts/show/1290
+exec sp_change_users_login 'auto_fix', 'Bible'
+
+
+FullText Search on SQL Server 2008
+http://dotnetguts.blogspot.com/2010/07/installing-and-running-fulltext-search.html
+http://blog.sqlauthority.com/2008/09/05/sql-server-creating-full-text-catalog-and-index
+http://technet.microsoft.com/en-us/library/cc721269(SQL.100).aspx
+http://www.simple-talk.com/sql/learn-sql-server/understanding-full-text-indexing-in-sql-server
+http://www.sql-server-performance.com/2010/full-text-search-2008
+
+Templates
+http://960.gs
+http://www.motemplates.com/files/index.php U:motuser P:o7kLf5B1r3DR
+http://www.templatesdock.com
+
+Bible Database
+http://www.believersresource.com
