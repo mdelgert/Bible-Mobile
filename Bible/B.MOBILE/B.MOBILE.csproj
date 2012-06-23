@@ -102,6 +102,13 @@
     <Content Include="Controls\SearchBible.ascx" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Images\IMG_0744.PNG" />
+    <Content Include="Images\IMG_0745.PNG" />
+    <Content Include="Images\IMG_0746.PNG" />
+    <Content Include="Images\IMG_0747.PNG" />
+    <Content Include="Images\IMG_0748.PNG" />
+    <Content Include="Images\IMG_0749.PNG" />
+    <Content Include="Images\ScreenPrint.png" />
     <Content Include="robots.txt" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
