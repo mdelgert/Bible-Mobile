@@ -6,6 +6,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CF19885C-16BD-496B-8E10-0EEFD008B91C}"
 	ProjectSection(SolutionItems) = preProject
 		Notes.txt = Notes.txt
+		ReadMe.docx = ReadMe.docx
 	EndProjectSection
 EndProject
 Project("{C8D11400-126E-41CD-887F-60BD40844F9E}") = "B.DB", "B.DB\B.DB.dbproj", "{67CBC824-A49E-4E9B-A947-360F3DFE65C3}"
